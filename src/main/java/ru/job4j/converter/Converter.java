@@ -32,31 +32,6 @@ public class Converter {
         return rsl;
     }
 
-    public static float rubleToTenge(float value) {
-        float rsl = (float) (value / 0.21);
-        return rsl;
-    }
-
-    public static float rubleToBelarusianRuble(float value) {
-        float rsl = value / 30;
-        return rsl;
-    }
-
-    public static float rubleToLira(float value) {
-        float rsl = (float) (value / 3.48);
-        return rsl;
-    }
-
-    public static float rubleToYuan(float value) {
-        float rsl = value / 13;
-        return rsl;
-    }
-
-    public static float rubleToZloty(float value) {
-        float rsl = value / 23;
-        return rsl;
-    }
-
     public static void main(String[] args) {
         float dollar = Converter.rubleToDollar(140);
         System.out.println("140 rubles are " + dollar + " dollar.");
@@ -70,15 +45,31 @@ public class Converter {
         System.out.println("140 rubles are " + yen + " yen.");
         float hryvnia = Converter.rubleToHryvnia(140);
         System.out.println("140 rubles are " + hryvnia + " hryvnia.");
-        float tenge = Converter.rubleToTenge(140);
-        System.out.println("140 rubles are " + tenge + " tenge.");
-        float belarusianruble = Converter.rubleToBelarusianRuble(140);
-        System.out.println("140 rubles are " + belarusianruble + " belarusianruble.");
-        float lira = Converter.rubleToLira(140);
-        System.out.println("140 rubles are " + lira + " lira.");
-        float yuan = Converter.rubleToYuan(140);
-        System.out.println("140 rubles are " + yuan + " yuan.");
-        float zloty = Converter.rubleToZloty(140);
-        System.out.println("140 rubles are " + zloty + " zloty.");
+
+        float in = 140;
+        float expected1 = 2.3333333F;
+        float out1 = Converter.rubleToDollar(in);
+        boolean passed1 = expected1 == out1;
+        System.out.println("140 rubles are 2.3333333. Test result : " + passed1);
+        float expected2 = 2;
+        float out2 = Converter.rubleToEuro(in);
+        boolean passed2 = expected2 == out2;
+        System.out.println("140 rubles are 2. Test result : " + passed2);
+        float expected3 = 1.3461539F;
+        float out3 = Converter.rubleToFranc(in);
+        boolean passed3 = expected3 == out3;
+        System.out.println("140 rubles are 1.3461539. Test result : " + passed3);
+        float expected4 = 1.1965812F;
+        float out4 = Converter.rubleToPoundSterling(in);
+        boolean passed4 = expected4 == out4;
+        System.out.println("140 rubles are 1.1965812. Test result : " + passed4);
+        float expected5 = 200;
+        float out5 = Converter.rubleToYen(in);
+        boolean passed5 = expected5 == out5;
+        System.out.println("140 rubles are 200. Test result : " + passed5);
+        float expected6 = 56;
+        float out6 = Converter.rubleToHryvnia(in);
+        boolean passed6 = expected6 == out6;
+        System.out.println("140 rubles are 56. Test result : " + passed6);
     }
 }
